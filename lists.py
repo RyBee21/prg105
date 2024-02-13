@@ -15,10 +15,9 @@ for day in week:
     
 
 
-# Prints total and average steps take 
+# Prints total and average steps taken 
     
-print(sum(steps))
-print(sum(steps)/len(week))
- 
+print("Total steps taken through the week: "+str(sum(steps)))
+print("Average steps taken per day: "+str(sum(steps)/len(week)))
 
 
