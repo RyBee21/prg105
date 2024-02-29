@@ -1,11 +1,13 @@
-def get_word(nato_alphabet):
-    user_word = input("please Enter a word")
-    for letter in user_word.upper():
-        if letter.isalpha():  # Check if the character is a letter
-            print(nato_alphabet.get(letter, letter))  # Print NATO term or the letter itself if not found
+# Gets word from user
+user_word = input("Please enter a word: ")
+# Convert input word to lowercase 
+user_word = user_word.upper()
 
-def main():
-    nato_alphabet = {
+
+# Itterates through each letter and displays its Nato term 
+def main(user_word):
+    # Nato Dictionary 
+    nato_dict = {
         "A": "Aplha",
         "B": "Bravo",
         "C": "Charlie",
@@ -15,7 +17,7 @@ def main():
         "G": "Golf",
         "H": "Hotel",
         "I": "India",
-        "J": "Juliette",
+        "J": "Juliet",
         "K": "Kilo",
         "L": "Lima",
         "M": "Mike",
@@ -33,5 +35,12 @@ def main():
         "Y": "Yankee",
         "Z": "Zulu"
     }
-main()
-get_word(nato_alphabet)
+    # Iterate through each letter of users word
+    for letter in user_word:
+        # Check if the letter is in dictionary
+        if letter in nato_dict:
+            # Print the corresponding NATO phonetic term
+            print(nato_dict[letter])
+
+# Call the function with the user input
+main(user_word)
