@@ -1,14 +1,8 @@
-# Gets word from user
-user_word = input("Please enter a word: ")
-# Convert input word to lowercase 
-user_word = user_word.upper()
-
-
-# Itterates through each letter and displays its Nato term 
-def main(user_word):
+# Program that display each letter of your word as a Nato term
+def main():
     # Nato Dictionary 
     nato_dict = {
-        "A": "Aplha",
+        "A": "Alpha",
         "B": "Bravo",
         "C": "Charlie",
         "D": "Delta",
@@ -35,12 +29,17 @@ def main(user_word):
         "Y": "Yankee",
         "Z": "Zulu"
     }
-    # Iterate through each letter of users word
+    # Gets word from user
+    user_word = input("Please enter a word: ")
+    # Convert input word to uppercase 
+    user_word = user_word.upper()
+
+        # Iterate through each letter of user word
     for letter in user_word:
-        # Check if the letter is in dictionary
+        # Check if the letter is in the dictionary
         if letter in nato_dict:
             # Print the corresponding NATO phonetic term
             print(nato_dict[letter])
 
 # Call the function with the user input
-main(user_word)
+main()
