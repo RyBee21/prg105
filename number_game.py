@@ -5,7 +5,7 @@
     You guess 
     can you win?
 
-""""
+"""
 # Important Random and Math
 import math
 import random
@@ -29,14 +29,14 @@ def game():
                 win = True # Switch win to TRUE
                 break # End
             
-            # Displays how far the users guess is 
-            elif 0 > abs(win - guess) <= 5:
-                print("Your answer is getting very hot!!! Keep trying? ")
+            # Displays how far the user's guess is 
+            elif 0 <= abs(win - guess) <= 5:
+                print("Your answer is getting very hot!!! Keep trying! ")
 
-            elif 5 > abs(win - guess) <= 15:
-                print("Your answer is hot carefully resconisder your next guess? ")
+            elif 5 <= abs(win - guess) <= 15:
+                print("Your answer is hot carefully reconsider your next guess? ")
 
-            elif 15 > abs(win - guess) <=25:
+            elif 15 <= abs(win - guess) <=25:
                 print("Your answer is cool its ok just try again")
             
             elif abs(win - guess) > 25:
