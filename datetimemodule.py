@@ -1,34 +1,37 @@
-# calculate a person's age in: Years, months, weeks, days
-
 from datetime import datetime
 
 def main():
-    print("\n\n")
-    # now = datetime.now()
-    # print(f"now: {now}")
-    # timestamp = datetime.now().time()
-    # print(f"timestamp: {timestamp}")
-    print("\n\n")
     try:
-        today = datetime.today()
-        print(today.weekday())
+
         birth_year = int(input("What year were you born?  "))
         month = int(input("What Month were you born (as a number. May would be 5)  "))
         day = int(input("What day of the month were you born?  "))
-        # just need datetime not datetime.date
-        # because we imported datetime from datetime
         birthday = datetime(birth_year, month, day)
         birth_year = str(birth_year + 10)
-       
+        current_date = datetime.now()
+        difference = current_date - birthday
+
+        # Calculate the age in years
+        age_years = difference.days // 365
+
+        # Calculate the age in months
+        age_months = difference.days // 30
+
+        # Calculate the age in weeks
+        age_weeks = difference.days // 7
+
+        # Calculate the age in days
+        age_days = difference.days
+
         print("Your birthday is: ")
         birthday_output = birthday.strftime("%Y-%m-%d")
         print(birthday_output) 
-        birthday = birthday.replace(year = 1981)
-        print (f"Gee, you look like you were born {birthday}")
-        date_string = str(birth_year) + "-" + smonth + "-" + day 
-        dt = datetime.strptime(date_string, "%Y-%m-%d")
-        print(dt)
-      
+        print(f"Difference is {age_days} days")
+        print(f"You are {age_years:.1f} years old, {age_months:.1f} months old, and {age_weeks:.1f} weeks old.")
+        
+    except ValueError:
+        print("Invalid input. Please enter valid numerical values for year, month, and day.")
+        main() 
     except Exception as e:
         print(f"ooooops!!!:  {e}") 
         main()
