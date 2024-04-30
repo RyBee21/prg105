@@ -55,7 +55,13 @@ def check():
     
 
 def save():
-    # save the file
+    try:
+        with open("customer_list.txt", 'a') as file: 
+            for line in output:
+                file.write(line)
+        print("Data appended and file updated successfully.")
+    except IOError:
+        print("Error: Unable to write to file.")
     print("Save")
     main()
 
